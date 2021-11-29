@@ -108,6 +108,10 @@ legend {
     display: none;
 }
 
+.page__overlay_modal_open {
+    display: flex;
+}
+
 @media (min-width: 768px) {
     
     .container {
