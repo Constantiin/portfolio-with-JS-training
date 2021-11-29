@@ -1,6 +1,8 @@
 const disabledScroll = () => {
     const widthScroll = window.innerWidth - document.body.offsetWidth;
 
+    document.querySelector('.page__header').style.left = `calc(50% - ${720 + widthScroll/2}px)`;
+
     document.body.scrollPosition = window.scrollY;
 
     document.documentElement.style.cssText = `
@@ -22,6 +24,7 @@ const disabledScroll = () => {
 const enabledScroll = () => {
     document.documentElement.style.cssText = '';
     document.body.style.cssText = 'position: relative';
+    document.querySelector('.page__header').style.left = `calc(50% - 720px)`;
     window.scroll({top: document.body.scrollPosition});
 };
 
