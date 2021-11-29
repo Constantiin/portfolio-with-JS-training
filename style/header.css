@@ -16,14 +16,22 @@
 }
 
 .header__contacts {
-    display: none;
     position: absolute;
+    height: 0;
     top: 61px;
     left: 0;
     right: 0;
-    padding: 30px 15px;
     color: #ffffff;
     background-color: #A1B7C8;
+    overflow: hidden;
+    -webkit-transition: height .4s ease-in-out;
+    -o-transition: height .4s ease-in-out;
+    -moz-transition: height .4s ease-in-out;
+    transition: height .4s ease-in-out;
+}
+
+.header__contacts_open {
+    height: auto;
 }
 
 .header__contacts-menu {
@@ -31,6 +39,10 @@
     width: 27px;
     height: 14px;
     background-image: url("../img/menu.svg");
+}
+
+.contacts__list {
+    padding: 30px 15px;
 }
 
 .contacts__item {
@@ -99,7 +111,6 @@
 
     .header__contacts {
         top: 101px;
-        padding: 40px;
     }
 
     .header__logo {
