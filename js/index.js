@@ -1,3 +1,24 @@
+const disabledScroll = () => {
+    const widthScroll = window.innerWidth - document.body.offsetWidth;
+
+    document.body.scrollPosition = window.scrollY;
+
+    document.body.style.cssText = `
+        overflow: hidden;
+        position: fixed;
+        top: -${document.body.scrollPosition}px;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        padding-right: ${widthScroll}px;
+    `;
+};
+
+const enabledScroll = () => {
+    document.body.style.cssText = 'position: relative';
+    window.scroll({top: document.body.scrollPosition});
+};
+
 { // модальное окно
     const aboutOrderBtn = document.querySelector('.about__order-btn');
     const pageOverlayModal = document.querySelector('.page__overlay_modal');
@@ -13,7 +34,9 @@
             fast: 0.1,
         };
 
-        selectorBtn.addEventListener('click', () => {
+        const openModal = () => {
+            disabledScroll();
+            
             selectorModal.style.opacity = opacity;
             selectorModal.classList.add(selectorActiveBtn);
             const anim = () => {
@@ -22,9 +45,11 @@
                 if (opacity < 1) requestAnimationFrame(anim);
             };
             requestAnimationFrame(anim);
-        });
+        };
 
-        closeTrigger.addEventListener('click', () => {
+        const closeModal = () => {
+            enabledScroll();
+
             const anim = () => {
                 opacity -= speed[speedKey];
                 selectorModal.style.opacity = opacity;
@@ -35,6 +60,16 @@
                 };
             };
             requestAnimationFrame(anim);
+        };
+
+        selectorBtn.addEventListener('click', openModal);
+
+        closeTrigger.addEventListener('click', closeModal);
+
+        selectorModal.addEventListener('click', (event) => {
+            if (event.target === selectorModal) {
+                closeModal();
+            };
         });
     };
 
