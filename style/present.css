@@ -1,0 +1,171 @@
+.about__photo {
+    width: 100px;
+    object-fit: cover;
+    margin: 0 auto 20px;
+}
+
+.about__content {
+    margin: 0 auto 20px;
+}
+
+.about__group-title {
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.about__title {
+    width: 100%;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 120%;
+    text-transform: uppercase;
+}
+
+.about__subtitle {
+    width: 100%;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    text-transform: uppercase;
+}
+
+.about__description {
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 140%;
+}
+
+.about__order-btn {
+    padding: 16px 60px;
+    background-color: #E87C40;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+@media (min-width: 480px) {
+
+    .about__container {
+        display: flex;
+    }
+
+    .about__photo {
+        width: 25%;
+        margin-right: 15px;
+        margin-bottom: 0;
+    }
+
+    .about__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .about__title {
+        font-size: 35px;
+    }
+
+    .about__subtitle {
+        font-size: 18px;
+    }
+
+    .about__description {
+        font-size: 15px;
+    }
+
+    .about__order-btn {
+        font-size: 18px;
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    .about {
+        padding-top: 70px;
+    }
+
+    .about__photo {
+        width: 170px;
+        margin-right: 80px;
+    }
+
+    .about__title {
+        margin-bottom: 24px;
+    }
+
+    .about__group-title {
+        margin-bottom: 40px;
+    }
+
+    .about__description {
+        margin-bottom: 60px;
+    }
+
+    .about__order-btn {
+        padding: 24px 82px;
+    }
+
+}
+
+@media (min-width: 992px) {
+    
+    .about {
+        position: relative;
+    }
+
+    .about:before {
+        content: "";
+        position: absolute;
+        left: 10%;
+        top: 0;
+        display: block;
+        width: 35%;
+        height: 100%;
+        background-image: linear-gradient(to right, #A1B7C8 50%, #fff);
+        z-index: -1;
+    }
+
+}
+
+@media (min-width: 1440px) {
+    
+    .about:before {
+        left: 10%;
+    }
+
+    .about__photo {
+        width: 220px;
+    }
+
+    .about__group-title {
+        margin-bottom: 60px;
+    }
+
+    .about__title {
+        margin-bottom: 20px;
+        font-size: 50px;
+    }
+
+    .about__subtitle {
+        font-size: 20px;
+    }
+
+    .about__description {
+        font-size: 18px;
+    }
+
+}
+
+@media (min-width: 1500px) {
+
+    .about:before {
+        left: 15%;
+    }
+
+}

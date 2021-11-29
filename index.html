@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Иван Иванович - Создание сайтов</title>
+
+    <link rel="shortcut icon" type="image/svg" href="img/favicon.svg"/>
+
+    <link rel="stylesheet" href="style/index.css">
+    
+</head>
+
+<body class="page">
+    <header class="page__header header">
+        <div class="header__container container">
+            <img class="header__logo" src="img/logo.svg" alt="Логотип Ивана Ивановича создателя сайтов">
+            <address class="header__contacts contacts">
+                <ul class="contacts__list">
+                    <li class="contacts__item">
+                        <p class="contacts__head">Телефон</p>
+                        <a href="tel:+79999999999" class="contacts__link">+7 (999) 999 99-99</a>
+                    </li>
+                    <li class="contacts__item">
+                        <p class="contacts__head">Email</p>
+                        <a href="mailto:ivanich@gmail.com" class="contacts__link">ivanich@gmail.com</a>
+                    </li>
+                    <li class="contacts__item">
+                        <p class="contacts__head contacts__head_social">Соц. сети</p>
+                        <ul class="contacts__social-list">
+                            <li class="contacts__social-item">
+                                <a href="#" class="contacts__social-link contacts__social-link_whatsup"
+                                    aria-label="whatsup"></a>
+                            </li>
+                            <li class="contacts__social-item">
+                                <a href="#" class="contacts__social-link contacts__social-link_instagram"
+                                    aria-label="instagram"></a>
+                            </li>
+                            <li class="contacts__social-item">
+                                <a href="#" class="contacts__social-link contacts__social-link_facebook"
+                                    aria-label="facebook"></a>
+                            </li>
+                            <li class="contacts__social-item">
+                                <a href="#" class="contacts__social-link contacts__social-link_telegram"
+                                    aria-label="telegram"></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </address>
+            <button class="header__contacts-menu"></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="about">
+            <div class="about__container container">
+                <picture class="about__photo">
+                    <source srcset="img/photo.avif" type="image/avif">
+                    <source srcset="img/photo.webp" type="image/webp">
+                    <img src="img/photo.png" alt="Фото Ивана Ивановича создателя сайтов">
+                </picture>
+                <div class="about__content">
+                    <hgroup class="about__group-title">
+                        <h1 class="about__title">Иван Иванович</h1>
+                        <h2 class="about__subtitle">Разработчик сайтов</h2>
+                    </hgroup>
+                    <p class="about__description">Меня зовут Иван Иванович, я разработчик сайтов с&nbsp;опытом
+                        1&nbsp;год</p>
+                    <button class="about__order-btn">Заказать</button>
+                </div>
+            </div>
+        </section>
+        <section class="advantage">
+            <div class="container">
+                <h2 class="advantage__title">Почему я</h2>
+                <ul class="advantage__list">
+                    <li class="advantage__item advantage__item_stack">Стек: HTML, CSS, PHP, JavaScript, React</li>
+                    <li class="advantage__item advantage__item_mockup">Создам mockup под ваш проект</li>
+                    <li class="advantage__item advantage__item_inclusive">Инклюзивность</li>
+                    <li class="advantage__item advantage__item_adapt">Адаптивная и кроссбраузерная вёрстка</li>
+                    <li class="advantage__item advantage__item_clear">Чистый валидный код</li>
+                    <li class="advantage__item advantage__item_copyright">Копирайтинг</li>
+                </ul>
+            </div>
+        </section>
+        <section class="portfolio">
+            <div class="container">
+                <h2 class="portfolio__title">Портфолио</h2>
+                <div class="portfolio__slider swiper">
+                    <ul class="portfolio__list swiper-wrapper">
+                        <li class="portfolio__item swiper-slide">
+                            <article class="card">
+                                <img class="card__picture" src="img/cinema.jpg" alt="">
+                                <p class="card__data">
+                                    <span class="card__client">Клиент: Cinema</span>
+                                    <time class="card__date" datetime="2020">год: 2020</time>
+                                </p>
+                                <h3 class="card__title">Многостраничный сайт</h3>
+                            </article>
+                        </li>
+                        <li class="portfolio__item swiper-slide">
+                            <article class="card">
+                                <img class="card__picture" src="img/iphone.jpg" alt="">
+                                <p class="card__data">
+                                    <span class="card__client">Клиент: Full Apple</span>
+                                    <time class="card__date" datetime="2020">год: 2020</time>
+                                </p>
+                                <h3 class="card__title">Landing-page</h3>
+                            </article>
+                        </li>
+                        <li class="portfolio__item swiper-slide">
+                            <article class="card">
+                                <img class="card__picture" src="img/dom.jpg" alt="">
+                                <p class="card__data">
+                                    <span class="card__client">Клиент: Game Over</span>
+                                    <time class="card__date" datetime="2019">год: 2019</time>
+                                </p>
+                                <h3 class="card__title">Landing-page</h3>
+                            </article>
+                        </li>
+                        <li class="portfolio__item swiper-slide">
+                            <article class="card">
+                                <img class="card__picture" src="img/go.jpg" alt="">
+                                <p class="card__data">
+                                    <span class="card__client">Клиент: Friendly House</span>
+                                    <time class="card__date" datetime="2020">год: 2020</time>
+                                </p>
+                                <h3 class="card__title">Landing-page</h3>
+                            </article>
+                        </li>
+                        <li class="portfolio__item swiper-slide">
+                            <article class="card">
+                                <img class="card__picture" src="img/friendly_house.jpg" alt="">
+                                <p class="card__data">
+                                    <span class="card__client">Клиент: ItalGroup boutique</span>
+                                    <time class="card__date" datetime="2020">год: 2020</time>
+                                </p>
+                                <h3 class="card__title">Многостраничный сайт</h3>
+                            </article>
+                        </li>
+                    </ul>
+
+                    <button class="portfolio__arrow portfolio__arrow_left"></button>
+                    <button class="portfolio__arrow portfolio__arrow_right"></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="page__overlay page__overlay_modal">
+        <div class="modal">
+            <h2 class="modal__title">Заполните форму и я свяжусь с вами</h2>
+
+            <form class="modal__form callback">
+
+                <fieldset class="callback__group">
+                    <legend class="visually-hidden">Личные данные</legend>
+                    <label class="callback__label">
+                        <span class="callback__label-text">ФИО</span>
+                        <input type="text" class="callback__input" name="bio" placeholder="Введите ваше ФИО">
+                    </label>
+                    <label class="callback__label">
+                        <span class="callback__label-text">Телефон</span>
+                        <input type="text" class="callback__input" name="phone" placeholder="Введите ваш номер">
+                    </label>
+                </fieldset>
+
+                <fieldset class="callback__group connect">
+                    <legend class="connect__title">Где удобнее связаться?</legend>
+                    <label class="connect__label">
+                        <input class="connect__radio" type="radio" name="connect" value="telegram">
+                        <span class="connect__text">Телеграм</span>
+                    </label>
+                    <label class="connect__label">
+                        <input class="connect__radio" type="radio" name="connect" value="whatsup">
+                        <span class="connect__text">Whatsup</span>
+                    </label>
+                    <label class="connect__label">
+                        <input class="connect__radio" type="radio" name="connect" value="call">
+                        <span class="connect__text">Позвонить</span>
+                    </label>
+                    <label class="connect__label">
+                        <input class="connect__radio" type="radio" name="connect" value="viber">
+                        <span class="connect__text">Viber</span>
+                    </label>
+                </fieldset>
+
+                <button class="callback__btn" type="submit">Заказать</button>
+
+            </form>
+
+            <button class="modal__close">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="29.1681" height="1.94454" rx="0.972271" transform="matrix(0.707106 -0.707107 0.707106 0.707107 0 20.625)" fill="#282626"/>
+                    <rect width="29.1681" height="1.94454" rx="0.972271" transform="matrix(0.707106 0.707107 -0.707106 0.707107 1.375 0)" fill="#282626"/>
+                </svg>                    
+            </button>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

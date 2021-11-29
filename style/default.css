@@ -1,0 +1,164 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #110303;
+    background-color: #FFFFFF;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+address {
+    font-style: normal;
+}
+
+h1, h2, h3, p, ul {
+    margin: 0;
+}
+
+button, ul {
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+.container {
+    max-width: 1100px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 30px 0;
+}
+
+.about__photo {
+    display: block;
+    max-width: 445px;
+    max-height: 670px;
+}
+
+.page__overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .6);
+    overflow: auto;
+    padding: 15px;
+    display: flex;
+    z-index: 5;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden;
+}
+
+fieldset {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+legend {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+.page__overlay_modal {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    
+    .container {
+        padding: 0 40px;
+    }
+
+    section {
+        padding: 50px 0;
+    }
+
+}
+
+@media (min-width: 992px) {
+
+    .container {
+        padding: 0 30px 0 270px;
+    }
+
+    .page__header {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+    }
+
+    section {
+        padding: 65px 0;
+    }
+
+}
+
+@media (min-width: 1440px) {
+
+    .page {
+        background-image: linear-gradient(to right, #A1B7C8 24%, transparent 24%);
+    }
+
+    .page__header {
+        left: calc(50% - 720px);
+    }
+
+    section {
+        padding: 75px 0;
+    }
+
+}
+
+@media (min-width: 2700px) {
+
+    .page {
+        background-image: linear-gradient(to right, #A1B7C8 30%, transparent 30%);
+    }
+
+}
