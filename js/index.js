@@ -3,6 +3,11 @@ const disabledScroll = () => {
 
     document.body.scrollPosition = window.scrollY;
 
+    document.documentElement.style.cssText = `
+        position: relative;
+        height: 100vh;
+    `;
+
     document.body.style.cssText = `
         overflow: hidden;
         position: fixed;
@@ -36,7 +41,7 @@ const enabledScroll = () => {
 
         const openModal = () => {
             disabledScroll();
-            
+
             selectorModal.style.opacity = opacity;
             selectorModal.classList.add(selectorActiveBtn);
             const anim = () => {
