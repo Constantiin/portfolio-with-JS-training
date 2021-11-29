@@ -20,6 +20,7 @@ const disabledScroll = () => {
 };
 
 const enabledScroll = () => {
+    document.documentElement.style.cssText = '';
     document.body.style.cssText = 'position: relative';
     window.scroll({top: document.body.scrollPosition});
 };
