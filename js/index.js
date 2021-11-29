@@ -2,35 +2,38 @@ const aboutOrderBtn = document.querySelector('.about__order-btn');
 const pageOverlayModal = document.querySelector('.page__overlay_modal');
 const modalClose = document.querySelector('.modal__close');
 
-const handlerModal = (selectorBtn, selectorModal, selectorActiveBtn, closeTrigger, speedKey = 5) => {
+const handlerModal = (selectorBtn, selectorModal, selectorActiveBtn, closeTrigger, speedKey = 'medium') => {
 
     let opacity = 0;
 
     const speed = {
-        slow: 15,
-        medium: 7,
-        fast: 1
+        slow: 0.02,
+        medium: 0.05,
+        fast: 0.1,
     };
 
     selectorBtn.addEventListener('click', () => {
         selectorModal.style.opacity = opacity;
         selectorModal.classList.add(selectorActiveBtn);
-        const timer = setInterval(() => {
-            opacity += 0.02;
+        const anim = () => {
+            opacity += speed[speedKey];
             selectorModal.style.opacity = opacity;
-            if (opacity >= 1) clearInterval(timer);
-        }, speed[speedKey]);
+            if (opacity < 1) requestAnimationFrame(anim);
+        };
+        requestAnimationFrame(anim);
     });
 
     closeTrigger.addEventListener('click', () => {
-        const timer = setInterval(() => {
-            opacity -= 0.02;
+        const anim = () => {
+            opacity -= speed[speedKey];
             selectorModal.style.opacity = opacity;
-            if (opacity <= 0) {
-                clearInterval(timer);
+            if (opacity > 0) {
+                requestAnimationFrame(anim);
+            } else {
                 selectorModal.classList.remove(selectorActiveBtn);
             };
-        }, speed[speedKey]);
+        };
+        requestAnimationFrame(anim);
     });
 };
 
