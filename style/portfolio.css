@@ -48,13 +48,18 @@
 }
 
 .portfolio__list {
-    display: flex;
-    justify-content: center;
+        display: flex;
+        justify-content: center;
+        max-width: 550px;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin: 0 auto;
 }
 
 .portfolio__add {
     display: block;
     margin: 0 auto;
+    padding-top: 25px;
     width: 26px;
     height: 26px;
     -webkit-transition: color .2s, -webkit-transform .2s;

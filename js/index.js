@@ -152,3 +152,75 @@ const enabledScroll = () => {
         enabledScroll();
     });
 }
+
+{ // создание карточек из json
+
+    const COUNT_CARD = 2;
+
+    const portfolioList = document.querySelector('.portfolio__list');
+    const addCardBtn = document.querySelector('.portfolio__add');
+
+    const getData = () => fetch('../db.json')
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw `Error: ${response.status}`;
+                };
+            })
+            .catch(error => console.log(error));
+
+    const createDataStore = async () => {
+        const data = await getData();
+        
+        return {
+            data,
+            counter: 0,
+            count: COUNT_CARD,
+            get length() {
+                return this.data.length;
+            },
+            get cardData() {
+                const renderData = this.data.slice(this.counter, this.counter + this.count);
+                this.counter += renderData.length;
+                return renderData;
+            },
+        };
+    };
+
+    const renderCard = data => {
+        const cards = data.map(({image, client, year, type}) => {
+
+            const li = document.createElement('li');
+            li.classList.add('portfolio__item');
+            li.innerHTML = `
+                <article class="card">
+                <img class="card__picture" src="${image}.jpg" alt="${client}">
+                <p class="card__data">
+                    <span class="card__client">${client}</span>
+                    <time class="card__date" datetime="${year}">год: ${year}</time>
+                </p>
+                <h3 class="card__title">${type}</h3>
+            `;
+
+            return li;
+        });
+        portfolioList.append(...cards);
+    };
+
+    const initPortfolio = async () => {
+        const store = await createDataStore();
+
+        renderCard(store.cardData);
+
+        addCardBtn.addEventListener('click', () => {
+            renderCard(store.cardData);
+
+            if (store.length === store.counter) {
+                addCardBtn.remove();
+            };
+        });
+    };
+
+    initPortfolio();
+}
