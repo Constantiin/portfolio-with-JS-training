@@ -189,18 +189,25 @@ const enabledScroll = () => {
     };
 
     const renderCard = data => {
-        const cards = data.map(({image, client, year, type}) => {
+        const cards = data.map(({preview, image, client, year, type}) => {
 
             const li = document.createElement('li');
             li.classList.add('portfolio__item');
             li.innerHTML = `
-                <article class="card">
-                <img class="card__picture" src="${image}.jpg" alt="${client}">
-                <p class="card__data">
-                    <span class="card__client">${client}</span>
-                    <time class="card__date" datetime="${year}">год: ${year}</time>
-                </p>
-                <h3 class="card__title">${type}</h3>
+                <article class="card" tabindex="0" role="button" aria-label="открыть макет" data-full-image="${image}">
+                    <picture class="card__picture">
+                        <source srcset="${preview}.avif" type="image/avif">
+                        <source srcset="${preview}.webp" type="image/webp">
+                        <img src="${preview}.jpg" alt="${client}" width="166" height="103">
+                    </picture>
+
+                    <p class="card__data">
+                        <span class="card__client">${client}</span>
+                        <time class="card__date" datetime="${year}">год: ${year}</time>
+                    </p>
+
+                    <h3 class="card__title">${type}</h3>
+                </article>
             `;
 
             return li;
